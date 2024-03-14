@@ -52,8 +52,11 @@ apt install -y git curl jq jp2a nano
 
 ## API
 Las pruebas que realizaremos van a ser con esta API:
+
 <https://trace.moe/>
+
 Acá hay más documentación de todo lo que se puede hacer con ella:
+
 <https://soruly.github.io/trace.moe-api/#/docs>
 
 ## curl
@@ -170,7 +173,9 @@ Lo mejor de ser tester no es encontrar sino GENERAR un error:
 curl "${API}https://una.pagina.que.no.existe.com/el_secreto_de_la_vida.jpg | jq .error"
 ```
 Suficiente por el momento, salí del contenedor escribiendo `exit` o pulsando *CONTROL+D*.
+
 ---
+
 ## Dockerfile troll
 Me olvidaba de contarte, acabás de perder todo lo que hiciste porque los contenedores no son persistentes, lo que hagas adentro muere con la instancia.
 Así que lo que hacen los testers que quieren automatizar es configurar ambientes todos los días.
@@ -184,6 +189,7 @@ Hermoso, ahora tenés una nueva imagen que bauticé "qessr".  Confirmalo listand
 ```bash
 docker images
 ```
+
 ## Volúmenes
 Corré la imagen nueva.
 ```bash
@@ -192,6 +198,9 @@ docker run -it -v ./app:/app qessr
 Pero con este comando acabamos de hacer algo muy cheto. Acabamos de crear un volumen, o sea, una carpeta compartida entre el contenedor y tu compu!
 Ojo, no la cagues, es de lectoescritura, lo que hagas con los archivos que están adentro pasa con los que están afuera.
 Ahora el directorio `app` está adentro y afuera del contenedor. Si entrás vas a encontrar muchas cosas copadas:
+
+### img/
+Podés copiar imágenes en este directorio para buscarlas con la API. En los ejercicios lo vas a necesitar.
 
 ### test_urls.sh
 Un script que busca errores en una lista de urls: `bash test_urls.sh [ARCHIVO]`
