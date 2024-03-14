@@ -181,6 +181,15 @@ Me olvidaba de contarte, acabás de perder todo lo que hiciste porque los conten
 Así que lo que hacen los testers que quieren automatizar es configurar ambientes todos los días.
 Nah, mentira. En este repo te dejé un archivo *Dockerfile* que tiene todo lo que quieren las huachas.
 Miralo y vas a ver que hace exactamente lo mismo que hicimos antes, usa una base debian, le instala los programas, etc.
+```Dockerfile
+FROM debian:latest
+
+RUN apt update
+RUN apt -y install git curl jq jp2a nano
+
+ENTRYPOINT bash
+```
+
 Podés crear una imagen nueva a partir del Dockerfile ejecutando esto en el directorio donde se encuentre:
 ```bash
 docker build . -t qessr
