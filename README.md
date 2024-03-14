@@ -15,7 +15,7 @@ Git es el programa con el que vamos a administrar cambios y versiones de nuestro
 GitHub es una plataforma de alojamiento de repositorios.
 Para arrancar basta con clonar este repositorio donde quieras:
 ```bash
-https://github.com/gabochi/qessr.git
+git https://github.com/gabochi/qessr.git
 ```
 
 ## Docker
