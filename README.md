@@ -230,6 +230,33 @@ La lista de urls que genera save_results.sh
 
 ---
 
+## Ejercicio 1
+
+```bash
+#!/bin/bash
+
+# En este ejercicio hay un bucle que recorre todos los archivos en la carpeta img/
+# Lo que falta es la peticion a la API por cada uno.
+
+for FILE in $(ls img/)
+do
+	echo me gustaria saber de que anime es la imagen ${FILE}
+done
+```
+
+## Ejercicio 2
+
+```bash
+#!/bin/bash
+
+# En este ejercicio hay una peticion a un link que graba la imagen en un archivo.
+# Falta un bucle que haga lo mismo por cada url que haya en el archivo results o cualquier otro...
+
+curl -s "${LINK}" --output img/${RANDOM}.jpg
+```
+
+---
+
 ## TO DO
 Falta que explique un ejercicio final, sería forkear el repo, crear un branch, comitear y pushear los ejercicios resueltos.
 
